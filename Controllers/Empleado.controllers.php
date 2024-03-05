@@ -5,7 +5,7 @@ if (isset($_POST['operacion'])) {
   if ($_POST['operacion'] == 'login') {
     $respuesta = $empleado->login(["user" => $_POST['user']]);
     echo json_encode($respuesta);
-  }
+  } 
   if ($_POST['operacion'] == 'add') {
     $datosRecibidos = [
       "nombres" => $_POST["nombres"],

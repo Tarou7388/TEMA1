@@ -9,13 +9,17 @@ body {
   height: 100vh;
   padding-top: 50px;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column; /* Para alinear verticalmente */
+}
 
 img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  position: relative; /* Cambiado a relativo */
+  margin-bottom: 20px; /* Mover la imagen hacia abajo */
 }
 
 .login-container {
@@ -53,4 +57,12 @@ img {
 
 .login-container button:hover {
   background-color: #45a049;
+}
+#registrar-link {
+  color: green;
+  transition: color 0.3s ease;
+}
+
+#registrar-link:hover {
+  color: darkgreen;
 }

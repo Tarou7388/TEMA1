@@ -9,17 +9,15 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Tractoristas</a></li>
-            <li><a href="#">Tractores</a></li>
-            <li><a href="#">Programación</a></li>
-            <li><a href="#">Resumen</a></li>
+            <li><img src="../Img/logo_gris.png" alt="Imagen Principal"  onclick="window.location.href = 'principal.php';" ></li>
+            <li><a href="Tractoristas.php">Tractoristas</a></li>
+            <li><a href="Tractores.php">Tractores</a></li>
+            <li><a href="Programacion.php">Programación</a></li>
+            <li><a href="Resumen.php">Resumen</a></li>
         </ul>
     </nav>
 
     <section class="main-content">
-        <!-- Aquí puedes colocar el contenido principal de tu página -->
-        <img src="#" alt="Imagen Principal">
     </section>
 </body>
 </html>

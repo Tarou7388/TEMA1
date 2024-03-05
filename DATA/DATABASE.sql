@@ -8,7 +8,7 @@ CREATE Table empleados(
     nombres         VARCHAR(50),
     apellidos       VARCHAR(50),
     nom_user        VARCHAR(50),
-    pass_user       VARCHAR(70),
+    pass_user       VARCHAR(74),
     create_at       datetime not null default NOW(),
     inactive_at     datetime null,
     update_at       datetime null,
@@ -18,7 +18,7 @@ CREATE Table empleados(
 INSERT INTO empleados(nombres, apellidos, nom_user, pass_user) VALUES ("FABIAN VALERIO", "TORRES ANCHANTE", "FABIAN123", "BETA123");
 INSERT INTO empleados(nombres, apellidos, nom_user, pass_user) VALUES ("ROSA LUISA", "CASTILLA LOPEZ", "ROSA123", "BETA123")
 
-CREATE PROCEDURE SPU_LOGIN(IN _user CHAR(50))
+CREATE PROCEDURE SPU_LOGIN(IN _user VARCHAR(50))
 BEGIN
 	SELECT
 	    EMP.nom_user,
@@ -34,7 +34,7 @@ CREATE PROCEDURE SPU_registro(
     IN _nombres  VARCHAR(50),
     IN _apellidos  VARCHAR(50),
     IN _nom_user  VARCHAR(50),
-    IN _pass_user  VARCHAR(50)
+    IN _pass_user  VARCHAR(74)
 )
 BEGIN
 	INSERT INTO
