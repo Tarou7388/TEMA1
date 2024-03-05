@@ -26,7 +26,7 @@ class Empleado extends Conexion
     public function add($data = [])
     {
         try {
-            $consulta = $this->pdo->prepare("CALL spu_insertar_empleados(?,?,?,?)");
+            $consulta = $this->pdo->prepare("CALL SPU_REGISTRO(?,?,?,?)");
             $consulta->execute(
                 array(
                     $data['nombres'],

@@ -23,15 +23,20 @@
       <button type="button" id="Comprobar">Entrar</button>
     </form>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       function $(id) { return document.querySelector(id) }
+      function decryptPassword(password, key) {
+        const bytes = CryptoJS.AES.decrypt(password, key);
+        return bytes.toString(CryptoJS.enc.Utf8);
+      }
       function logear() {
         const user = $("#username").value
-        
+
         if (user != "") {
           const parametros = new FormData()
-          parametros.append("operacion", "login") 
+          parametros.append("operacion", "login")
           parametros.append("user", user)
           fetch(`../Controllers/Empleado.controllers.php`, {
             method: "POST",
@@ -39,34 +44,38 @@
           })
             .then(respuesta => respuesta.json())
             .then(datos => {
-            console.log(datos)
               if (!datos) {
-                alert('No se encontro')
+                alert('No se encontro al usuario')
                 $("#frmLogin").reset()
                 $("#username").focus()
               }
               else {
                 const pass = $("#password").value
-                if (datos.pass_user == pass) {
-                  alert("Entro")
+                const key = $("#username").value
+                const passcryp= decryptPassword(datos.pass_user,key)
+                if (pass == passcryp) {
+                  window.location.href = 'principal.php';
                 }
-  
+                else{
+                  alert('Error en la contraseña')
+                }
+
               }
             })
             .catch(e => {
               console.error(e)
             })
         }
-        
+
       }
       $("#password").addEventListener("keypress", (event) => {
-          if (event.keyCode == 13) {
-            logear()
-          }
-        });
-  
+        if (event.keyCode == 13) {
+          logear()
+        }
+      });
+
       $("#Comprobar").addEventListener("click", logear)
-  
+
     })
   </script>
 </body>

@@ -11,7 +11,7 @@ if (isset($_POST['operacion'])) {
       "nombres" => $_POST["nombres"],
       "apellidos" => $_POST["apellidos"],
       "nom_user" => $_POST["nom_user"],
-      "pass_user" => $_POST["pass_user"],
+      "pass_user" => $_POST["pass_user"]
     ];
     $idobtenido = $empleado->add($datosRecibidos);
     echo json_encode($idobtenido);

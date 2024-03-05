@@ -1,13 +1,19 @@
-const bcrypt = require('bcryptjs');
+import CryptoJS from 'crypto-js';
 
-const plainPassword = 'contraseña123';
-const saltRounds = 10;
+const algoritmo = 'AES-256-CBC'; 
+const masterKey = "claveMaestraSegura";
 
-bcrypt.hash(plainPassword, saltRounds, (err, hash) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    console.log('Contraseña encriptada:', hash);
-    // Guarda el hash en tu base de datos o en cualquier otro lugar seguro
-});
+
+const password = "miContraseña123";
+const encryptedPassword = CryptoJS.AES.encrypt(password, masterKey).toString();
+console.log("Contraseña encriptada:", encryptedPassword);
+
+
+function decryptPassword(password) {
+    const bytes = CryptoJS.AES.decrypt(password, masterKey);
+    return bytes.toString(CryptoJS.enc.Utf8);
+}
+
+const decrip= decryptPassword(encryptedPassword)
+
+console.log(decrip)

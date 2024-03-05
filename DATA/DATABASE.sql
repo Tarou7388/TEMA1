@@ -28,4 +28,30 @@ BEGIN
 	    AND (EMP.nom_user = _user);
 	END;
 
+SELECT * from empleados;
+
+CREATE PROCEDURE SPU_registro(
+    IN _nombres  VARCHAR(50),
+    IN _apellidos  VARCHAR(50),
+    IN _nom_user  VARCHAR(50),
+    IN _pass_user  VARCHAR(50)
+)
+BEGIN
+	INSERT INTO
+	    empleados (
+	        nombres,
+	        apellidos,
+	        nom_user,
+	        pass_user
+	    )
+	VALUES (
+	        _nombres,
+	        _apellidos,
+	        _nom_user,
+	        _pass_user
+	    );
+	END;
+
+
+CALL SPU_REGISTRO('JUAN','lopez', 'juan113', 'asdww');
 CALL SPU_LOGIN ('FABIAN123');
