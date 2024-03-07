@@ -1,11 +1,14 @@
 <?php
+
+
 require_once '../Models/Empleado.php';
 if (isset($_POST['operacion'])) {
   $empleado = new Empleado();
   if ($_POST['operacion'] == 'login') {
     $respuesta = $empleado->login(["user" => $_POST['user']]);
     echo json_encode($respuesta);
-  } 
+  }
+
   if ($_POST['operacion'] == 'add') {
     $datosRecibidos = [
       "nombres" => $_POST["nombres"],
@@ -15,5 +18,14 @@ if (isset($_POST['operacion'])) {
     ];
     $idobtenido = $empleado->add($datosRecibidos);
     echo json_encode($idobtenido);
+  }
+
+  if ($_POST['operacion'] == 'tokencrear') {
+    $datosRecibidos = [
+      "user" => $_POST["gmail"],
+      "token" => $_POST["token"],
+    ];
+    $idobtenido = $empleado->Tokencrear($datosRecibidos);
+    echo json_encode($idobtenido); 
   }
 }

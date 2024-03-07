@@ -22,7 +22,7 @@
         <button type="button" id="registrar">Entrar</button>
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <script src="../JS/script_registro.js"></script>
+    <script src="../JS/registro.js"></script>
 </body>
 
 </html>

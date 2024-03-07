@@ -23,10 +23,26 @@ class Empleado extends Conexion
             die($e->getMessage());
         }
     }
+    public function Tokencrear($data = [])
+    {
+        try {
+            $consulta = $this->pdo->prepare("CALL SPU_TOKEN_CREAR(?,?)");
+            $consulta->execute(
+                array(
+                    $data['user'],
+                    $data['token']
+                )    
+            );
+
+            return $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
     public function add($data = [])
     {
         try {
-            $consulta = $this->pdo->prepare("CALL SPU_REGISTRO(?,?,?,?)");
+            $consulta = $this->pdo->prepare("CALL SPU_registro(?,?,?,?)");
             $consulta->execute(
                 array(
                     $data['nombres'],

@@ -22,6 +22,7 @@
       <input type="password" id="password" placeholder="Password" required>
       <button type="button" id="Comprobar">Entrar</button>
       <p style="margin-top: 10px;">¿Nuevo usuario?, <a id="registrar-link" href="registro.php">registrar</a></p>
+      <p><a href="recuperar.php">Recuperar contraseña</a></p>
     </form>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>

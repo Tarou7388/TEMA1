@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#registrar").addEventListener("click", registrar);
     $("#pass_user").addEventListener("keypress", (event) => {
         if (event.keyCode == 13) {
-          logear()
+            registrar()
         }
       });
 });
