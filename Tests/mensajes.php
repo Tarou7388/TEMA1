@@ -6,16 +6,16 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-      $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
       $mail->SMTPAuth = true;                                   //Enable SMTP authentication
       $mail->Username = 'cuentapracticas51@gmail.com';                     //SMTP username
       $mail->Password = 'm k h j q p q u a i q q h t n q';                               //SMTP password

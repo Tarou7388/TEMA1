@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#password").addEventListener("keypress", (event) => {
       if (event.keyCode == 13) {
         logear()
-      }
+      } 
     });
     $("#Comprobar").addEventListener("click", logear)
   })

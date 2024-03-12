@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formulario de Correo Electrónico</title>
 <link rel="stylesheet" href="../CSS/recuperar.css">
-</head>
+</head> 
 <body>
 
 <div class="container">

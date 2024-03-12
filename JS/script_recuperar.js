@@ -25,16 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fetch(`../Controllers/Empleado.controllers.php`, {
               method: "POST",
               body: parametros2
-            })
-              .catch(e => {
-                console.error(e)
-              })
-            fetch(`../Controllers/mensajes.php`, {
-              method: "POST",
-              body: parametros2
-            })
-              .then(respuesta => respuesta.json())
-              .then(datos => {
+            }).then(datos => {
                 alert('Se ha enviado un codigo de recuperar a tu correo')
                 window.location.href = 'verificar.php';
               })

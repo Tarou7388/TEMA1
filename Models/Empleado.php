@@ -56,8 +56,21 @@ class Empleado extends Conexion
             die($e->getMessage());
         }
     }
+    public function Token_verificar($data = [])
+    {
+        try {
+            $consulta = $this->pdo->prepare("CALL SPU_TOKEN(?)");
+            $consulta->execute(
+                array($data['user'])
+            );
+
+            return $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
 
-//$empleado = new Empleado();
-//$registro = $empleado->login(["user" => "FABIAN123"]);
-//echo json_encode($registro);
+// $empleado = new Empleado();
+// $registro = $empleado->Token_verificar(["user" => "jesusmattaramos@gmail.com"]);
+// echo json_encode($registro);
