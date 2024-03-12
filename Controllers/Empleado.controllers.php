@@ -25,7 +25,20 @@ if (isset($_POST['operacion'])) {
     $idobtenido = $empleado->add($datosRecibidos);
     echo json_encode($idobtenido);
   }
-  
+  if ($_POST['operacion'] == 'actualizarcontraseña') {
+    $datosRecibidos = [
+      "user" => $_SESSION['correo'],
+      "pass" => $_POST["pass"],
+    ];
+    $idobtenido = $empleado->actualizarcontraseña($datosRecibidos);
+    echo json_encode($idobtenido);
+  }
+  if ($_POST['operacion'] == 'correo') {
+    $datosRecibidos = [
+      "user" => $_SESSION['correo'],
+    ];
+    echo json_encode($datosRecibidos);
+  }
 
   if ($_POST['operacion'] == 'tokencrear') {
     $datosRecibidos = [

@@ -37,6 +37,14 @@ BEGIN
 		WHERE (nom_user=_user);
 	END;
 
+CREATE PROCEDURE SPU_ACTUALIZAR_CONTRASEÑA(IN _user VARCHAR(120),IN _pass VARCHAR(74))
+BEGIN
+	UPDATE empleados
+		SET	
+			pass_user=_pass
+		WHERE (nom_user=_user);
+	END;
+
 CREATE PROCEDURE SPU_TOKEN(IN _user VARCHAR(120))
 BEGIN
 	SELECT

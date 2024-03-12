@@ -39,6 +39,22 @@ class Empleado extends Conexion
             die($e->getMessage());
         }
     }
+    public function actualizarcontraseña($data = [])
+    {
+        try {
+            $consulta = $this->pdo->prepare("CALL SPU_ACTUALIZAR_CONTRASEÑA(?,?)");
+            $consulta->execute(
+                array(
+                    $data['user'],
+                    $data['pass']
+                )    
+            );
+
+            return $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
     public function add($data = [])
     {
         try {

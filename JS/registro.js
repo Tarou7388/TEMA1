@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(datos => {
                     document.getElementById("frmEmpleados").reset();
                     alert('El usuario se ha registrado con exito');
-                    window.location.href = 'actualizar.php';
+                    window.location.href = 'Login.php';
                 })
                 .catch(e => {
                     console.error(e);

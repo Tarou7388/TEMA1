@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then(datos => {
                     console.log(datos)
                     if (datos.token_user == token) {
-                        window.location.href = 'Login.php';
+                        window.location.href = 'actualizarporolvido.php';
                     }
                     else {
                         alert('Error en el token')
